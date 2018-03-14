@@ -55,6 +55,7 @@ class GenerosTableSeeder extends Seeder
             'nome' => 'Animação'
         ]);
 
+
         DB::table('generos')->insert([
             'nome' => 'Desenho Animado'
         ]);
@@ -87,7 +88,29 @@ class GenerosTableSeeder extends Seeder
             'nome' => 'Histórico'
         ]);
 
+        DB::table('generos')->insert([
+            'nome' => 'Drama'
+        ]);
 
+        DB::table('generos')->insert([
+            'nome' => 'Biografia'
+        ]);
+
+        DB::table('generos')->insert([
+            'nome' => 'Nacional'
+        ]);
+
+        DB::table('generos')->insert([
+            'nome' => 'Religioso'
+        ]);
+
+        DB::table('generos')->insert([
+            'nome' => 'Família'
+        ]);
+
+        DB::table('generos')->insert([
+            'nome' => 'Infantil Kids'
+        ]);
 
     }
 }

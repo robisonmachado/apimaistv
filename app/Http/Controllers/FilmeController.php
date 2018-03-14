@@ -130,7 +130,7 @@ class FilmeController extends Controller
 //#EXTINF:-1 tvg-id="" tvg-name="300 - A Ascensão do Império" tvg-logo="http://painel.iptvmove.com:25461/images/1253863.jpg" group-title="FILME: ACAO/AVENTURA",300 - A Ascensão do Império
 //http://painel.iptvmove.com:25461/movie/jorgepmi001/jorgepmi001/5252.mp4
 
-//#EXTINF:-1 tvg-id="" tvg-name="31 A Morte E A Unica Saida" tvg-logo="http://painel.iptvmove.com:25461/images/1253863.jpg" group-title="FILME: TERROR",31 A Morte E A Unica Saida
+
 //http://painel.iptvmove.com:25461/movie/jorgepmi001/jorgepmi001/5372.mkv
 
         return response()->streamDownload( function () {

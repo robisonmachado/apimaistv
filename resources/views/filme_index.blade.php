@@ -15,8 +15,9 @@
 
 <h2>LISTA DE FILMES</h2>
 <ul>
-@foreach ($filmes as $filme)
-<li> {{$filme->nome}} - <a href="/filmes/{{ $filme->id}}/edit">EDITAR</a></li>
+
+@foreach ($filmes as $index => $filme)
+<li> {{ ++$index }} - {{ $filme->nome}} - <a href="/filmes/{{ $filme->id}}/edit">EDITAR</a></li>
 
 @endforeach
 </ul>
