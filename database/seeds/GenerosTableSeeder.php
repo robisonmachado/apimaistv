@@ -112,5 +112,6 @@ class GenerosTableSeeder extends Seeder
             'nome' => 'Infantil Kids'
         ]);
 
+
     }
 }
