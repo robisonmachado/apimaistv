@@ -12,8 +12,10 @@
 <br>
 <a href="/nacionalidades/create">ADICIONAR NACIONALIDADE</a>
 <br>
+<br>
 
-<h2>LISTA DE FILMES</h2>
+<h1>FILMES: {{ $filmes->count() }}</h1>
+<h2>LISTANDO OS FILMES CADASTRADOS</h2>
 <ul>
 
 @foreach ($filmes as $index => $filme)

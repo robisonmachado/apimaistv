@@ -112,6 +112,11 @@ class GenerosTableSeeder extends Seeder
             'nome' => 'Infantil Kids'
         ]);
 
-
+        DB::table('generos')->insert([
+            'nome' => 'GRAVITY FALLS'
+        ]);
+        DB::table('generos')->insert([
+            'nome' => 'Super-heróis'
+        ]);
     }
 }
