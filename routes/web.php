@@ -19,6 +19,8 @@ Route::get('filmes/gerarListaM3U', 'FilmeController@gerarListaM3U');
 
 Route::resource('filmes', 'FilmeController');
 Route::resource('generos', 'GeneroController');
+Route::resource('series', 'SerieController');
+Route::resource('temporadas', 'TemporadaController');
 
 /*
 Route::get('/filme/edit/{id}', function () {
