@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Temporada;
+use App\Serie;
 use Illuminate\Http\Request;
 
 class TemporadaController extends Controller
@@ -22,9 +23,11 @@ class TemporadaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Serie $serie)
     {
-        //
+        return view('series.temporada_create',[
+            'serie' => $serie
+        ]);
     }
 
     /**
@@ -61,7 +64,12 @@ class TemporadaController extends Controller
      */
     public function edit(Temporada $temporada)
     {
-        //
+        //dd($temporada);
+        $serie = $temporada->serie;
+        return view('series.temporada_edit',[
+            'temporada' => $temporada,
+            'serie' => $serie
+        ]);
     }
 
     /**
@@ -73,7 +81,9 @@ class TemporadaController extends Controller
      */
     public function update(Request $request, Temporada $temporada)
     {
-        //
+        //dd('update temporada');
+        $temporada->update($request->all());
+        return redirect('series/'.$temporada->serie_id.'/edit');
     }
 
     /**
@@ -84,6 +94,9 @@ class TemporadaController extends Controller
      */
     public function destroy(Temporada $temporada)
     {
-        //
+        //dd('excluir temporada');
+        $serie_id = $temporada->serie_id;
+        $temporada->delete();
+        return redirect('series/'.$serie_id.'/edit');
     }
 }

@@ -15,7 +15,7 @@ class CreateSeriesTable extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome',100);
+            $table->string('nome',100)->unique();
             $table->string('url_capa')->nullable();
             $table->text('descricao')->nullable();
             $table->integer('ano_lancamento')->unsigned()->nullable();

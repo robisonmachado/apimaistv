@@ -21,11 +21,14 @@ class CreateEpisodiosTable extends Migration
             $table->integer('temporada_id')->unsigned();
             $table->foreign('temporada_id')->references('id')->on('temporadas')->onDelete('cascade');
 
+            $table->unique(['numero','temporada_id']);
+
             $table->text('descricao')->nullable();
             $table->string('url_arquivo');
             $table->string('url_capa')->nullable();
             $table->boolean('ativo')->default(true);
             
+
             $table->timestamps();
         });
     }

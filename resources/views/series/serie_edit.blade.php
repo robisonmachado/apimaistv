@@ -1,8 +1,14 @@
-<h2>EDITAR SÉRIE</h2>
+<h2>EDITAR SÉRIE: {{ $serie->nome }}</h2>
 
 <a href="/series">VOLTAR</a>
 <br>
 <br>
+
+<form action="/series/{{ $serie->id }}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="submit">EXCLUIR ESTA SÉRIE</button>
+</form>
 
 <form action="/series/{{ $serie->id }}" method="post">
     @csrf
@@ -35,52 +41,29 @@
 </form>
 
 
-<p>ADICIONAR TEMPORADA</p>
-<form action="/temporadas" method="post">
-    @csrf
+<a href="/temporadas/create/{{ $serie->id }}">ADICIONAR TEMPORADA</a>
 
-    <input type="hidden" name="serie_id" value="{{ $serie->id }}" required>
-
-    <label for="numero">NÚMERO:</label>
-    <input type="number" name="numero" required>
-    <br>
-
-    <label for="nome">NOME:</label>
-    <input type="text" name="nome">
-    <br>
-
-    <label for="ano_lancamento">ANO LANÇAMENTO:</label>
-    <input type="number" name="ano_lancamento">
-    <br>
-
-    <label for="url_capa">URL DA CAPA:</label>
-    <input type="text" name="url_capa">
-    <br>
-    
-    <label for="descricao">DESCRICAO:</label>
-    <br>
-    <textarea name="descricao"></textarea >
-    <br>
-
-    <label for="ativo">ATIVO:</label><br>
-    <input type="radio" name="ativo" value="1" checked> SIM<br>
-    <input type="radio" name="ativo" value="0"> NÃO <br>
-
-    <br>
-    <button type="submit">CADASTRAR TEMPORADA</button>
-
-</form>
-
+@if (count($serie->temporadas) > 0)
 <h2>TEMPORADAS:</h2>
+<ul>
+@foreach( $serie->temporadas as $index => $temporada)
+
+<li>NÚMERO: {{ $temporada->numero }} - NOME: {{ $temporada->nome }} <a href="/temporadas/{{ $temporada->id}}/edit">EDITAR</a></li>
+
+@endforeach
+</ul>
+
+<h2>LISTANDO TEMPORADAS E EPISÓDIOS:</h2>
+<ul>
 @foreach( $serie->temporadas as $temporada)
-
-NÚMERO: {{ $temporada->numero }} - NOME: {{ $temporada->nome }} <br>
-
-@endforeach
-
-<h2>EPISÓDIOS:</h2>
-@foreach( $serie->episodios as $episodio)
-
-NÚMERO: {{ $episodio->numero }} - NOME: {{ $episodio->nome }} <br>
+<li>NÚMERO: {{ $temporada->numero }} - NOME: {{ $temporada->nome }}</li>
+    <ul>
+    @foreach( $temporada->episodios as $episodio)
+        <li>NÚMERO: {{ $episodio->numero }} - NOME: {{ $episodio->nome }} </li>
+    @endforeach
+    </ul>
 
 @endforeach
+</ul>
+
+@endif

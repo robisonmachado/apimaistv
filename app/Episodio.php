@@ -16,5 +16,8 @@ class Episodio extends Model
         'ativo'
     ];
 
+    public function temporada(){
+        return $this->belongsTo(Temporada::class);
+    }
 
 }

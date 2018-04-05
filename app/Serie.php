@@ -24,4 +24,5 @@ class Serie extends Model
         return $this->hasManyThrough(Episodio::class, Temporada::class);
     }
 
+
 }

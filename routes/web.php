@@ -16,11 +16,14 @@ Route::get('/', function () {
 });
 
 Route::get('filmes/gerarListaM3U', 'FilmeController@gerarListaM3U'); 
+Route::get('temporadas/create/{serie}', 'TemporadaController@create');
+Route::get('episodios/create/{temporada}', 'EpisodioController@create'); 
 
 Route::resource('filmes', 'FilmeController');
 Route::resource('generos', 'GeneroController');
 Route::resource('series', 'SerieController');
 Route::resource('temporadas', 'TemporadaController');
+Route::resource('episodios', 'EpisodioController');
 
 /*
 Route::get('/filme/edit/{id}', function () {

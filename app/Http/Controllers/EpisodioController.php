@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Episodio;
+use App\Temporada;
+use App\Serie;
 use Illuminate\Http\Request;
 
 class EpisodioController extends Controller
@@ -22,9 +24,16 @@ class EpisodioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Temporada $temporada)
     {
-        //
+        //dd($temporada);
+        $serie = Serie::find($temporada->serie_id);
+        //dd($serie);
+
+        return view('series.episodio_create',[
+            'temporada' => $temporada,
+            'serie' => $serie
+        ]);
     }
 
     /**
@@ -35,7 +44,11 @@ class EpisodioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $episodio = new Episodio;
+        $episodio = $episodio->create($request->all());
+       
+        return redirect("temporadas/{$episodio->temporada_id}/edit");
     }
 
     /**
@@ -57,7 +70,12 @@ class EpisodioController extends Controller
      */
     public function edit(Episodio $episodio)
     {
-        //
+        //dd($episodio->temporada->serie);
+
+        return view('series.episodio_edit',[
+            'episodio' => $episodio
+        ]);
+
     }
 
     /**
@@ -69,7 +87,9 @@ class EpisodioController extends Controller
      */
     public function update(Request $request, Episodio $episodio)
     {
-        //
+        //dd('update episódio');
+        $episodio->update($request->all());
+        return redirect("temporadas/{$episodio->temporada->id}/edit");
     }
 
     /**
@@ -80,6 +100,9 @@ class EpisodioController extends Controller
      */
     public function destroy(Episodio $episodio)
     {
-        //
+        $temporada_id = $episodio->temporada->id;
+        $episodio->delete();
+        
+        return redirect("temporadas/{$temporada_id}/edit");
     }
 }

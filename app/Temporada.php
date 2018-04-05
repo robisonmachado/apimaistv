@@ -15,6 +15,10 @@ class Temporada extends Model
         'ativo'
     ];
 
+    public function serie(){
+        return $this->belongsTo(Serie::class);
+    }
+
     public function episodios(){
         return $this->hasMany(Episodio::class)->orderBy('numero');
     }

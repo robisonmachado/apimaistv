@@ -16,7 +16,7 @@ class SerieController extends Controller
     {
         //dd('Série index');
         
-        $series = Serie::all();
+        $series = Serie::orderBy('nome')->get();
 
         return view('series.serie_index', [
             'series' => $series
@@ -94,8 +94,9 @@ class SerieController extends Controller
      * @param  \App\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Serie $serie)
+    public function destroy(Serie $series)
     {
-        //
+        $series->delete();
+        return redirect('series');
     }
 }

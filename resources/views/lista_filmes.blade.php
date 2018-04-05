@@ -2,7 +2,7 @@
 
 ###############################################
 ######### SISTEMA GERADOR DE LISTA M3U ########
-#########         versão 0.2 alfa      ########
+#########         versão 0.3 alfa      ########
 ###############################################
 
 ####  LISTA GERADA EM: {{ $data }} ###
@@ -25,7 +25,7 @@
 
 
 @foreach( $genero->filmes as $filme)
-#EXTINF:-1 tvg-id="" tvg-name="{{ mb_strtoupper($filme->nome) }}" tvg-logo="{{ $filme->url_capa }}" group-title="+TV - {{ mb_strtoupper($genero->nome) }}", {{ mb_strtoupper($filme->nome) }}
+#EXTINF:-1 tvg-id="" tvg-name="{{ mb_strtoupper($filme->nome) }}" tvg-logo="{{ $filme->url_capa }}" group-title="+{{ mb_strtoupper($genero->nome) }}", {{ mb_strtoupper($filme->nome) }}
 {{ $filme->url_arquivo }}
 
 @endforeach

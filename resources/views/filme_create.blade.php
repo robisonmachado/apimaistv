@@ -22,16 +22,20 @@
 
 
 
-    <label for="ano_lancamento">ANO LANÇAMENTO:</label><input type="number" name="ano_lancamento">
+    <label for="ano_lancamento">ANO LANÇAMENTO:</label>
+    <input type="number" name="ano_lancamento">
     <br>
 
-    <label for="url_capa">URL DA CAPA:</label><input type="text" name="url_capa">
+    <label for="url_capa">URL DA CAPA:</label>
+    <input type="text" name="url_capa">
     <br>
 
-    <label for="url_arquivo">URL DO ARQUIVO:</label><input type="text" name="url_arquivo" required>
+    <label for="url_arquivo">URL DO ARQUIVO:</label>
+    <input type="text" name="url_arquivo" required>
     <br>
 
-    <label for="url_arquivo_encurtada">URL ENCURTADA:</label><input type="text" name="url_arquivo_encurtada">
+    <label for="url_arquivo_encurtada">URL ENCURTADA:</label>
+    <input type="text" name="url_arquivo_encurtada">
     <br>
 
     <p>GÊNEROS: </p>
