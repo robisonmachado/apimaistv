@@ -37,7 +37,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //throw new \Exception('é proibido criar RegisterController');
+        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

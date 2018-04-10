@@ -1,3 +1,7 @@
+@extends('layouts.maistv')
+
+@section('content')
+
 @if (session('mensagem'))
     <div class="alert alert-success">
         MENSAGEM: {{ session('mensagem') }}
@@ -35,3 +39,5 @@
 
 @endforeach
 </ul>
+
+@endsection

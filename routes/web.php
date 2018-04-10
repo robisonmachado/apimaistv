@@ -15,23 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('filmes/gerarListaM3U', 'FilmeController@gerarListaM3U'); 
-Route::get('temporadas/create/{serie}', 'TemporadaController@create');
-Route::get('episodios/create/{temporada}', 'EpisodioController@create'); 
+Route::middleware('auth')->group(function () {
 
-Route::resource('filmes', 'FilmeController');
-Route::resource('generos', 'GeneroController');
-Route::resource('series', 'SerieController');
-Route::resource('temporadas', 'TemporadaController');
-Route::resource('episodios', 'EpisodioController');
+    Route::get('filmes/gerarListaM3U', 'FilmeController@gerarListaM3U'); 
+    Route::get('temporadas/create/{serie}', 'TemporadaController@create');
+    Route::get('episodios/create/{temporada}', 'EpisodioController@create'); 
+    
+    Route::resource('filmes', 'FilmeController');
+    Route::resource('generos', 'GeneroController');
+    Route::resource('series', 'SerieController');
+    Route::resource('temporadas', 'TemporadaController');
+    Route::resource('episodios', 'EpisodioController');
 
-/*
-Route::get('/filme/edit/{id}', function () {
-    dd('filme works!');
 });
 
-Route::get('/filme/create', 'FilmeController@create');
 
-Route::post('/filme/store', 'FilmeController@store');
+Route::resource('login', 'LoginController');
 
-*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
