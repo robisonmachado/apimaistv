@@ -33,13 +33,18 @@
 
     </head>
     <body>
-        <header class="container col-12">
+      
+        <header class="container-fluid">
+                @auth
+                <span class="row d-sm-none justify-content-center">Bem-vindo: {{ Auth::user()->name }}</span>
+                @endauth
+            <div class="row justify-content-center justify-content-md-end align-items-center">
             @if (Route::has('login'))
             
             @auth
-                <span><b>Bem-vindo: {{ Auth::user()->name }} </b></span>
-                <a href="{{ url('/home') }}">Home</a>
-                <a href="{{ route('logout') }}" 
+                <span class="d-none d-sm-block">Bem-vindo: {{ Auth::user()->name }}</span>
+                <a class="btn btn-primary" href="{{ url('/home') }}">Home</a>
+                <a class="btn btn-primary" href="{{ route('logout') }}" 
                     onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -47,20 +52,29 @@
                 </form>
                             
                 @else
-                <a href="{{ route('login') }}">Login</a>
+                <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
     
             @endauth
           
             @endif
+            </div>
         </header>
+    
 
-        <section class="container">
+
+        <section class="container-fluid">
             @yield('content')      
         </section>
 
-        <footer>
-            @yield('footer')
+        <footer class="container-fluid">
+            <div class="wrapper">
+                <span class="">copyright MAISTV 2018</span>
+            </div>
         </footer>
-        
+
+       
+    
+
+
     </body>
 </html>
