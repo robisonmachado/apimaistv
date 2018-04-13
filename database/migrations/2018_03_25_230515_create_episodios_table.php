@@ -14,6 +14,8 @@ class CreateEpisodiosTable extends Migration
     public function up()
     {
         Schema::create('episodios', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->integer('numero')->unsigned();
             $table->string('nome',100)->nullable();

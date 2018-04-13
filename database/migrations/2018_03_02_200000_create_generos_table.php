@@ -14,8 +14,10 @@ class CreateGenerosTable extends Migration
     public function up()
     {
         Schema::create('generos', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
-            $table->string('nome');
+            $table->string('nome')->unique();
             $table->string('url_capa')->nullable();
             $table->timestamps();
         });

@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::middleware('auth')->group(function () {
+
+Route::group(['middleware' => ['auth', 'auth.unique.user']],function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('filmes/gerarListaM3U', 'FilmeController@gerarListaM3U'); 
     Route::get('temporadas/create/{serie}', 'TemporadaController@create');
@@ -30,9 +33,5 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::resource('login', 'LoginController');
-
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

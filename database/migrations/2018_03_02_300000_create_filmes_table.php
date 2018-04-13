@@ -14,6 +14,8 @@ class CreateFilmesTable extends Migration
     public function up()
     {
         Schema::create('filmes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->string('nome',100);
             $table->integer('duracao')->nullable();

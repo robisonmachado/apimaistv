@@ -15,6 +15,8 @@ class CreateTemporadasTable extends Migration
     public function up()
     {
         Schema::create('temporadas', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
 
             $table->integer('numero')->unsigned();            

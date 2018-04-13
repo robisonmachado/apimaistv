@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class GenerosTableSeeder extends Seeder
+class UserTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,15 +16,15 @@ class GenerosTableSeeder extends Seeder
         ]);
 
         DB::table('user_types')->insert([
-            'nome' => 'revendedor'
+            'name' => 'revendedor'
         ]);
 
-        DB::table('generos')->insert([
-            'nome' => 'administrador'
+        DB::table('user_types')->insert([
+            'name' => 'administrador'
         ]);
 
-        DB::table('generos')->insert([
-            'superfuckyou' => ''
+        DB::table('user_types')->insert([
+            'name' => 'desenvolvedor'
         ]);
 
         

@@ -42,4 +42,9 @@ class LoginController extends Controller
         return '/';
     }
 
+    public function username()
+    {
+        return 'name';
+    }
+
 }

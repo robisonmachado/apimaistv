@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function pai()
+    {
+        return $this->belongsTo(self::class, 'pai_id');
+    }
+
+    public function filhos(){
+        return $this->hasMany(self::class, 'pai_id')->where('id', '!=', $this->id)->orderBy('name');
+    }
+
 }

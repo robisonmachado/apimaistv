@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeriesTable extends Migration
+class CreatePacoteCreditosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,16 @@ class CreateSeriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('series', function (Blueprint $table) {
+        Schema::create('pacote_creditos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             
             $table->increments('id');
-            $table->string('nome',100)->unique();
-            $table->string('url_capa')->nullable();
-            $table->text('descricao')->nullable();
-            $table->integer('ano_lancamento')->unsigned()->nullable();
-            $table->boolean('ativo')->default(true);
-            
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->text('nome');
+            $table->integer('quantidade')->unsigned();
+
             $table->timestamps();
-            
         });
     }
 
@@ -35,6 +33,6 @@ class CreateSeriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('series');
+        Schema::dropIfExists('pacote_creditos');
     }
 }
