@@ -36,4 +36,22 @@ class User extends Authenticatable
         return $this->hasMany(self::class, 'pai_id')->where('id', '!=', $this->id)->orderBy('name');
     }
 
+    public function usertype()
+    {
+        return $this->belongsTo(UserType::class, 'user_type_id');
+    }
+
+    public function isAdmin(): bool {
+        return $this->usertype->name == 'administrador' ? true : false;
+    }
+
+    public function isCliente(): bool {
+        return $this->usertype->name == 'cliente' ? true : false;
+    }
+
+    public function isRevendedor(): bool {
+        return $this->usertype->name == 'revendedor' ? true : false;
+    }
+
+
 }

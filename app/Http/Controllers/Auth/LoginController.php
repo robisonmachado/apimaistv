@@ -39,7 +39,7 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        return '/';
+        return '/home';
     }
 
     public function username()

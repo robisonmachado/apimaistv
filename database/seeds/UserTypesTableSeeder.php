@@ -20,6 +20,10 @@ class UserTypesTableSeeder extends Seeder
         ]);
 
         DB::table('user_types')->insert([
+            'name' => 'revendedor master'
+        ]);
+
+        DB::table('user_types')->insert([
             'name' => 'administrador'
         ]);
 
