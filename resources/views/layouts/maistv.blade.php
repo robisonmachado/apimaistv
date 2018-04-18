@@ -36,10 +36,8 @@
     <body>
       
         <header class="container-fluid">
-                @auth
-                <span class="row d-sm-none justify-content-center">Bem-vindo: {{ Auth::user()->name }}</span>
-                @endauth
-            <div class="row justify-content-center justify-content-md-end align-items-center">
+                
+            <div class="row justify-content-end justify-content-md-end align-items-center">
             @if (Route::has('login'))
             
             @auth

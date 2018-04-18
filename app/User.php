@@ -53,5 +53,8 @@ class User extends Authenticatable
         return $this->usertype->name == 'revendedor' ? true : false;
     }
 
+    public function isRevendedorMaster(): bool {
+        return $this->usertype->name == 'revendedor master' ? true : false;
+    }
 
 }
