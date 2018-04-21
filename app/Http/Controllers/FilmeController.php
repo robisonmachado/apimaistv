@@ -18,9 +18,9 @@ class FilmeController extends Controller
     {
         //dd('Filme index');
         $filmes = Filme::orderBy('nome')->get();
-
         $generos = Genero::orderBy('nome')->get();
 
+        
         return view('filme_index', [
             'filmes' => $filmes,
             'generos' => $generos 

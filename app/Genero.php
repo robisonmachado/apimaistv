@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Genero extends Model
 {
     protected $fillable = [
+        'id',
         'nome', 
         'url_capa'
     ];

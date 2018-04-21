@@ -28,10 +28,19 @@ class Filme extends Model
         return $this->belongsToMany(Genero::class);
     }
 
+    public function temUrlCapa():bool{
+        return empty($this->url_capa) ? false : true;
+    }
+
+
     public function filmesExcetoGenero($genero_id){
         return $this->whereHas('generos', function($query) use ($genero_id){
             $query->where('genero_id', '!=', $genero_id);
         })->orderBy('nome')->get();
+    }
+
+    public static function getRamdomFilmes(int $quantidade){
+        return self::orderByRaw('RAND()')->distinct('id')->take($quantidade)->get();
     }
 
 }

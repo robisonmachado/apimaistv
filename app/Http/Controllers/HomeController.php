@@ -28,7 +28,7 @@ class HomeController extends Controller
         if ($usuario->isAdmin()) {
             return view('admin.admin_home');
         }elseif($usuario->isCliente()) {
-            return view('cliente.cliente_index');
+            return redirect('usuarios');
         }
         
     }
