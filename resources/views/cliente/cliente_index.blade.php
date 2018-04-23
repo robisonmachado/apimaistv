@@ -13,6 +13,8 @@
 
         <a class="col btn btn-primary" href="">SÉRIES</a>
 
+        <a class="col btn btn-primary" href="">ANIMES</a>
+
         <a class="col btn btn-primary" href="">SHOWS</a>
 
     </div>

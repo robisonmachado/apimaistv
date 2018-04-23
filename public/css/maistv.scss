@@ -154,6 +154,8 @@ footer{
 .item_genero{
     border: thin solid black;
     width: 15vw;
+    font-weight: bold;
+    
     @include media-breakpoint-down(md) {
         width: 90vw;
        }
