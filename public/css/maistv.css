@@ -78,32 +78,51 @@ div.cliente a {
   padding: 0.5rem;
   margin: 1vh; }
 
-div.lancamentos {
-  background-color: green;
-  _padding: 1vw; }
+.lancamentos {
+  margin-bottom: 2vw; }
 
-div.lancamentos.filme_container {
+.filme_container {
   background-color: black;
-  width: 19vw;
-  height: 25vw; }
-
-div.lancamentos a img {
-  width: 19vw;
-  height: 25vw;
-  padding: 1vw; }
+  width: 18vw;
+  height: 23vw;
+  border: thin solid black;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5vmin;
+  margin: 1vmin; }
   @media (max-width: 991.98px) {
-    div.lancamentos a img {
-      width: 28.5vw;
-      height: 37.5vw; } }
+    .filme_container {
+      width: 28vw;
+      height: 37vw; } }
   @media (max-width: 767.98px) {
-    div.lancamentos a img {
+    .filme_container {
       width: 42vw;
       height: 55vw; } }
   @media (max-width: 575.98px) {
-    div.lancamentos a img {
+    .filme_container {
       width: 38vw;
       height: 50vw; } }
+
+div.lancamentos a img {
+  width: 100%;
+  height: 100%; }
 
 section h2.lancamentos {
   font-weight: bold;
   font-size: 7vmin; }
+
+.lista_generos {
+  list-style: none; }
+
+.item_genero {
+  border: thin solid black;
+  width: 15vw; }
+  @media (max-width: 991.98px) {
+    .item_genero {
+      width: 90vw; } }
+  @media (max-width: 767.98px) {
+    .item_genero {
+      width: 42vw; } }
+  @media (max-width: 575.98px) {
+    .item_genero {
+      width: 90vw; } }

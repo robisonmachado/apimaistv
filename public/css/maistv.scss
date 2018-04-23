@@ -101,44 +101,73 @@ footer{
 
   }
 
-  div.lancamentos{
-    background-color: green;
-    _padding: 1vw;
+  .lancamentos{
+    margin-bottom: 2vw;
   }
 
-
-  div.lancamentos.filme_container{
+  .filme_container{ 
     background-color: black;
-    width: 19vw;
-    height: 25vw;
+    width: 18vw;
+    height: 23vw;
+    border: thin solid black;
+    color:white;
+    font-weight: bold;
+    font-size: 2.5vmin;
+    margin: 1vmin;
+    
+
+    @include media-breakpoint-down(md) {
+        width: 28vw;
+        height: 37vw;
+       }
+  
+       @include media-breakpoint-down(sm) {
+        width: 42vw;
+        height: 55vw;
+       }
+  
+       @include media-breakpoint-down(xs) { 
+            width: 38vw;
+            height: 50vw;
+       }
   }
  
 
   div.lancamentos  a img{
-    width: 19vw;
-    height: 25vw;
-    padding: 1vw;
-    
-    @include media-breakpoint-down(md) {
-      width: 28.5vw;
-      height: 37.5vw;
-     }
+    width: 100%;
+    height: 100%;
 
-     @include media-breakpoint-down(sm) {
-      width: 42vw;
-      height: 55vw;
-     }
-
-     @include media-breakpoint-down(xs) { 
-          width: 38vw;
-          height: 50vw;
-     }
 }
 
   section h2.lancamentos {
     font-weight: bold;
     font-size: 7vmin;
   }
+
+
+
+.lista_generos{
+    list-style: none;
+    
+}
+
+.item_genero{
+    border: thin solid black;
+    width: 15vw;
+    @include media-breakpoint-down(md) {
+        width: 90vw;
+       }
+  
+       @include media-breakpoint-down(sm) {
+        width: 42vw;
+       }
+  
+       @include media-breakpoint-down(xs) { 
+            width: 90vw;
+       }
+    
+}
+
 
 
   

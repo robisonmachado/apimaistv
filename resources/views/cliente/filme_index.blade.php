@@ -2,26 +2,23 @@
 
 @section('content')
 
+<h2>LISTA DE GÊNEROS</h2>
+<ul class="lista_generos row justify-content-center">
+    @foreach ($generos as $genero)
+    <li class="item_genero d-flex align-items-center justify-content-center"> {{$genero->nome}}</li>
+    @endforeach
+</ul>
+
 <h1>FILMES: {{ $filmes->count() }}</h1>
 
-<ul>
+<ul class="row">
 
 @foreach ($filmes as $index => $filme)
-<li> {{ ++$index }} - {{ $filme->nome}} - <a href="/filmes/{{ $filme->id}}/edit">EDITAR</a></li>
+<li class="col">{{ $filme->nome}} - <a href="/filmes/{{ $filme->id}}/play">PLAY</a></li>
 
 @endforeach
 </ul>
 
-<h2>LISTA DE GÊNEROS</h2>
-<ul>
-@foreach ($generos as $genero)
-<li> {{$genero->nome}} - <a href="/generos/{{ $genero->id}}/edit">EDITAR</a></li>
-    @foreach ($genero->filmes as $filme)
-    <p> >>> {{$filme->nome}} </p>
 
-    @endforeach
-
-@endforeach
-</ul>
 
 @endsection

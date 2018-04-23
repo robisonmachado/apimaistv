@@ -22,14 +22,16 @@
     
     <div class="row align-items-center justify-content-center  lancamentos" >
       @foreach($ramdomFilmes as $filme)
-        <div class="d-inline-block">
-          <a href="{{ url('filmes/'.$filme->id.'/play') }}" >
-            @if($filme->temUrlCapa())
-              <img src="{{ $filme->url_capa }}" alt="{{ $filme->nome }}">
-            @endif          
-            {{ $filme->nome }}
-          </a>
+      <a href="{{ url('filmes/'.$filme->id.'/play') }}" >
+        <div class="d-flex align-items-center justify-content-center filme_container">
+         
+          @if($filme->temUrlCapa())
+          <img src="{{ $filme->url_capa }}" alt="{{ $filme->nome }}">
+          @else
+          {{ $filme->nome }}
+          @endif          
         </div>
+        </a>
       @endforeach
     </div>
 

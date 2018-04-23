@@ -21,7 +21,7 @@ class FilmeController extends Controller
         $generos = Genero::orderBy('nome')->get();
 
         
-        return view('filme_index', [
+        return view('filmes.filme_index', [
             'filmes' => $filmes,
             'generos' => $generos 
             ]);
@@ -37,7 +37,7 @@ class FilmeController extends Controller
 
         $generos = Genero::orderBy('nome')->get();
         $nacionalidades = Nacionalidade::orderBy('nome')->get();
-        return view('filme_create', [
+        return view('filmes.filme_create', [
             'generos' => $generos,
             'nacionalidades' => $nacionalidades
             ]);
@@ -85,7 +85,7 @@ class FilmeController extends Controller
 
         $generos = Genero::orderBy('nome')->limit(1000)->get();
         $nacionalidades = Nacionalidade::orderBy('nome')->get();
-        return view('filme_edit', [
+        return view('filmes.filme_edit', [
             'filme' => $filme,
             'generos' => $generos,
             'nacionalidades' => $nacionalidades
@@ -150,6 +150,12 @@ class FilmeController extends Controller
             
 
         }, 'iptvmais.m3u8');
+    }
+
+    public function play(Filme $filme){
+        return view('filmes.play_filme',[
+            "filme" => $filme
+        ]);
     }
 
 }
