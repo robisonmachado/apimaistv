@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             GenerosTableSeeder::class,
             NacionalidadesTableSeeder::class,
-            FilmesTableSeeder::class
+            FilmesTableSeeder::class,
+            FilmesGenerosSeeder::class
         
         ]);
         
