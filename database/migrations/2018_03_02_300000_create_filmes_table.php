@@ -17,14 +17,14 @@ class CreateFilmesTable extends Migration
             $table->engine = 'InnoDB';
             
             $table->increments('id');
-            $table->string('nome',100);
+            $table->string('nome');
             $table->integer('duracao')->nullable();
-            $table->string('diretor',100)->nullable();
+            $table->string('diretor')->nullable();
 
             $table->integer('nacionalidade_id')->unsigned();
             $table->foreign('nacionalidade_id')->references('id')->on('nacionalidades')->onDelete('cascade');
 
-            $table->string('url_capa')->nullable();
+            $table->string('url_capa', 250)->nullable();
             $table->string('url_arquivo');
             $table->string('url_arquivo_encurtada')->nullable();
             $table->integer('ano_lancamento')->nullable();

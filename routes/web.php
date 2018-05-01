@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('filmes/listaPublicaM3U', 'FilmeController@gerarListaM3U'); 
 
 Route::group(['middleware' => ['auth', 'auth.unique.user']],function () {
 

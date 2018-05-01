@@ -12,7 +12,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Jquery -->
+        <!-- Jquery --> 
         <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 
         <!-- bootstrap 4.1 jS -->
@@ -45,7 +45,7 @@
                 <a class="btn btn-primary" href="{{ url('/home') }}">Home</a>
                 <a class="btn btn-primary" href="{{ route('logout') }}" 
                     onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">Logout</a>
+                        document.getElementById('logout-form').submit();">SAIR</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
@@ -65,11 +65,11 @@
             @yield('content')      
         </section>
 
-        <footer class="container-fluid">
+        <!-- <footer class="container-fluid">
             <div class="wrapper">
                 <span class="">copyright MAISTV 2018</span>
             </div>
-        </footer>
+        </footer> -->
 
     </body>
 </html>

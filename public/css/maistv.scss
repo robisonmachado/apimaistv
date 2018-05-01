@@ -3,22 +3,19 @@
 @import "bootstrap-4.1.0/scss/variables";
 @import "bootstrap-4.1.0/scss/mixins";
 
-html,body {
-    background-color: #fff;
-    color: #636b6f;
+body {
+    
+    color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;    
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
 }
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
 .links > a {
-    color: black;
     padding: 0.2em;
     margin-top: 1em;
     font-size: 4vmin;
@@ -26,11 +23,16 @@ body {
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+
+    &:hover {
+        color: red;
+    }
+
+    &:focus {
+        color: red;
+    }
 }
 
-.links > a:hover {
-    color: red;
-}
 
 header{
     background-color: black;
@@ -48,12 +50,18 @@ header span{
 header a{
     font-weight: bold !important;
     margin-right: 1vw;
+    
+    &:hover{
+        background-color: #000055 !important;
+        border-color: white !important;
+    }
+
+    &:focus{
+        background-color: #000055 !important;
+        border-color: white !important;
+    }
 }
 
-header a:hover{
-    background-color: #000055 !important;
-    border-color: white !important;
-}
 
 section {
     flex: 1;
@@ -91,42 +99,63 @@ footer{
       font-size: 0.8rem;
   }
 
-  div.cliente{
-    background-color: yellow;
-  }
 
   div.cliente a{
     padding: 0.5rem;
     margin: 1vh;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #000055 !important;
+        border-color: white !important;
+    }
+
+    &:focus{
+        background-color: #000055 !important;
+        border-color: white !important;
+    }
 
   }
 
   .lancamentos{
-    margin-bottom: 2vw;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
   }
 
   .filme_container{ 
     background-color: black;
-    width: 18vw;
-    height: 23vw;
-    border: thin solid black;
+    border: thin solid #333;
     color:white;
     font-weight: bold;
     font-size: 2.5vmin;
     margin: 1vmin;
-    
+
+    @include media-breakpoint-up(lg) {
+        width: 12vw;
+        height: 16vw;
+    }
+
+    @include media-breakpoint-down(lg) {
+        width: 18vw;
+        height: 23vw;
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 28vw;
+        height: 37vw;
+    }
 
     @include media-breakpoint-down(md) {
         width: 28vw;
         height: 37vw;
        }
   
-       @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm) {
         width: 42vw;
         height: 55vw;
        }
   
-       @include media-breakpoint-down(xs) { 
+    @include media-breakpoint-down(xs) { 
             width: 38vw;
             height: 50vw;
        }
@@ -142,6 +171,10 @@ footer{
   section h2.lancamentos {
     font-weight: bold;
     font-size: 7vmin;
+    @include media-breakpoint-up(lg) {
+        font-size: 5vmin;
+    }
+
   }
 
 
@@ -154,8 +187,16 @@ footer{
 .item_genero{
     border: thin solid black;
     width: 15vw;
-    font-weight: bold;
     
+    &:focus{
+        background-color: #000055 !important;
+        
+    }
+
+    &:hover{
+        background-color: #000055 !important;  
+    }
+
     @include media-breakpoint-down(md) {
         width: 90vw;
        }
@@ -172,4 +213,5 @@ footer{
 
 
 
-  
+
+

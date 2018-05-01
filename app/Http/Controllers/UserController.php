@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         if(Auth::user()->isCliente()){
             //$ramdomFilmes = Filme::orderByRaw('RAND()')->distinct('id')->take(5)->get();
-            $ramdomFilmes = Filme::getRamdomFilmes(5);
+            $ramdomFilmes = Filme::getRamdomFilmes(14);
             //dd($ramdomFilmes);
             return view('cliente.cliente_index',[
                 'ramdomFilmes' => $ramdomFilmes

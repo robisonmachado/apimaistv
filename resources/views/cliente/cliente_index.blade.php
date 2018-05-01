@@ -13,13 +13,15 @@
 
         <a class="col btn btn-primary" href="">SÉRIES</a>
 
+        <a class="col btn btn-primary" href="">SHOWS</a>
+
         <a class="col btn btn-primary" href="">ANIMES</a>
 
-        <a class="col btn btn-primary" href="">SHOWS</a>
+        <a class="col btn btn-primary" href="">DIVERSOS</a>
 
     </div>
             
-    <h2 class="lancamentos">LANÇAMENTOS 2018</h2>
+    <h2 class="lancamentos">ÚLTIMOS TÍTULOS ADICIONADOS</h2>
 
     
     <div class="row align-items-center justify-content-center  lancamentos" >

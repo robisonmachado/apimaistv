@@ -1,17 +1,13 @@
-html, body {
-  background-color: #fff;
-  color: #636b6f;
+body {
+  color: white;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  min-height: 100vh; }
-
-body {
-  display: flex;
   min-height: 100vh;
-  flex-direction: column; }
+  display: flex;
+  flex-direction: column;
+  background-color: #000; }
 
 .links > a {
-  color: black;
   padding: 0.2em;
   margin-top: 1em;
   font-size: 4vmin;
@@ -19,9 +15,10 @@ body {
   letter-spacing: .1rem;
   text-decoration: none;
   text-transform: uppercase; }
-
-.links > a:hover {
-  color: red; }
+  .links > a:hover {
+    color: red; }
+  .links > a:focus {
+    color: red; }
 
 header {
   background-color: black;
@@ -37,10 +34,12 @@ header span {
 header a {
   font-weight: bold !important;
   margin-right: 1vw; }
-
-header a:hover {
-  background-color: #000055 !important;
-  border-color: white !important; }
+  header a:hover {
+    background-color: #000055 !important;
+    border-color: white !important; }
+  header a:focus {
+    background-color: #000055 !important;
+    border-color: white !important; }
 
 section {
   flex: 1;
@@ -71,25 +70,40 @@ footer span {
   color: white;
   font-size: 0.8rem; }
 
-div.cliente {
-  background-color: yellow; }
-
 div.cliente a {
   padding: 0.5rem;
-  margin: 1vh; }
+  margin: 1vh;
+  font-weight: bold; }
+  div.cliente a:hover {
+    background-color: #000055 !important;
+    border-color: white !important; }
+  div.cliente a:focus {
+    background-color: #000055 !important;
+    border-color: white !important; }
 
 .lancamentos {
-  margin-bottom: 2vw; }
+  margin-top: 2vmin;
+  margin-bottom: 2vmin; }
 
 .filme_container {
   background-color: black;
-  width: 18vw;
-  height: 23vw;
-  border: thin solid black;
+  border: thin solid #333;
   color: white;
   font-weight: bold;
   font-size: 2.5vmin;
   margin: 1vmin; }
+  @media (min-width: 992px) {
+    .filme_container {
+      width: 12vw;
+      height: 16vw; } }
+  @media (max-width: 1199.98px) {
+    .filme_container {
+      width: 18vw;
+      height: 23vw; } }
+  @media (max-width: 991.98px) {
+    .filme_container {
+      width: 28vw;
+      height: 37vw; } }
   @media (max-width: 991.98px) {
     .filme_container {
       width: 28vw;
@@ -110,14 +124,20 @@ div.lancamentos a img {
 section h2.lancamentos {
   font-weight: bold;
   font-size: 7vmin; }
+  @media (min-width: 992px) {
+    section h2.lancamentos {
+      font-size: 5vmin; } }
 
 .lista_generos {
   list-style: none; }
 
 .item_genero {
   border: thin solid black;
-  width: 15vw;
-  font-weight: bold; }
+  width: 15vw; }
+  .item_genero:focus {
+    background-color: #000055 !important; }
+  .item_genero:hover {
+    background-color: #000055 !important; }
   @media (max-width: 991.98px) {
     .item_genero {
       width: 90vw; } }
