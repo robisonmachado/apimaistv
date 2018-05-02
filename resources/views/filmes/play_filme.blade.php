@@ -63,10 +63,10 @@ $(document).ready(function(){
 
 <body>
 
-<div id="jp_container_1" class="jp-video jp-video-360p" role="application" aria-label="media player">
+<div id="jp_container_1" class="jp-video" role="application" aria-label="media player">
 	<div class="jp-type-single">
 		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-		<div class="jp-gui">
+		<div class="jp-gui player_video">
 			<div class="jp-video-play">
 				<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
 			</div>
@@ -92,7 +92,7 @@ $(document).ready(function(){
 					</div>
 					<div class="jp-toggles">
 						<button class="jp-repeat" role="button" tabindex="0">repeat</button>
-						<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+						<!-- <button class="jp-full-screen" role="button" tabindex="0">full screen</button> -->
 					</div>
 				</div>
 				<div class="jp-details">

@@ -66,6 +66,7 @@ header a{
 section {
     flex: 1;
     text-align: center;
+    margin-bottom: 10vmin;
 }
 
 section .title {
@@ -187,14 +188,17 @@ footer{
 .item_genero{
     border: thin solid black;
     width: 15vw;
+    font-weight: bold;
     
     &:focus{
         background-color: #000055 !important;
+        border-color: white;
         
     }
 
     &:hover{
-        background-color: #000055 !important;  
+        background-color: #000055 !important;
+        border-color: white;  
     }
 
     @include media-breakpoint-down(md) {
@@ -209,6 +213,17 @@ footer{
             width: 90vw;
        }
     
+}
+
+.container * {
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+}
+
+.player_video {
+    width: 100vw;
+    height: 100vh;
 }
 
 

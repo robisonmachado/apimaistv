@@ -43,7 +43,8 @@ header a {
 
 section {
   flex: 1;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 10vmin; }
 
 section .title {
   font-weight: bold;
@@ -133,11 +134,14 @@ section h2.lancamentos {
 
 .item_genero {
   border: thin solid black;
-  width: 15vw; }
+  width: 15vw;
+  font-weight: bold; }
   .item_genero:focus {
-    background-color: #000055 !important; }
+    background-color: #000055 !important;
+    border-color: white; }
   .item_genero:hover {
-    background-color: #000055 !important; }
+    background-color: #000055 !important;
+    border-color: white; }
   @media (max-width: 991.98px) {
     .item_genero {
       width: 90vw; } }
@@ -147,3 +151,12 @@ section h2.lancamentos {
   @media (max-width: 575.98px) {
     .item_genero {
       width: 90vw; } }
+
+.container * {
+  background-color: #000;
+  color: white;
+  font-weight: bold; }
+
+.player_video {
+  width: 100vw;
+  height: 100vh; }

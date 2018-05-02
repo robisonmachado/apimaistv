@@ -94,20 +94,37 @@ class UserController extends Controller
         //
     }
 
-    public function filmes(User $user)
+    public function escolherGeneroFilme(User $user)
     {
-        //dd($user);
-        //verifica se usuário está ativo
         if($user->ativo){
             //verifica se usuário é cliente
             if($user->user_type_id==1){
-                $filmes = Filme::orderBy('nome')->get();
                 $generos = Genero::orderBy('nome')->get();
 
                 
-                return view('cliente.filme_index', [
-                    'filmes' => $filmes,
+                return view('cliente.escoher_genero_de_filme', [
                     'generos' => $generos
+                ]);
+            }
+
+        } 
+
+    }
+
+
+    public function filmes(User $user, Genero $genero)
+    {
+        //dd($genero->filmes);
+
+        if($user->ativo){
+            //verifica se usuário é cliente
+            if($user->user_type_id==1){
+                $filmes = $genero->filmes;
+
+                
+                return view('cliente.filmes_do_genero_escolhido', [
+                    'genero' => $genero,
+                    'filmes' => $filmes
                 ]);
             }
 

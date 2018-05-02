@@ -38,7 +38,8 @@ Route::group(['middleware' => ['auth', 'auth.unique.user']],function () {
     Route::get('temporadas/create/{serie}', 'TemporadaController@create');
     Route::get('episodios/create/{temporada}', 'EpisodioController@create');
 
-    Route::get('usuarios/{user}/filmes', 'UserController@filmes'); 
+    Route::get('usuarios/{user}/escolherGeneroFilme', 'UserController@escolherGeneroFilme'); 
+    Route::get('usuarios/{user}/filmes/genero/{genero}', 'UserController@filmes'); 
     Route::get('filmes/{filme}/play', 'FilmeController@play'); 
 
     Route::resource('filmes', 'FilmeController');

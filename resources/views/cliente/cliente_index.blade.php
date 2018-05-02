@@ -7,9 +7,10 @@
 @section('content')
     @auth
     
+
     <div class="cliente row justify-content-center align-items-center">
     
-        <a class="col btn btn-primary" href="usuarios/{{ Auth::user()->id }}/filmes">FILMES</a>
+        <a class="col btn btn-primary" href="usuarios/{{ Auth::user()->id }}/escolherGeneroFilme">FILMES</a>
 
         <a class="col btn btn-primary" href="">SÉRIES</a>
 
@@ -17,7 +18,7 @@
 
         <a class="col btn btn-primary" href="">ANIMES</a>
 
-        <a class="col btn btn-primary" href="">DIVERSOS</a>
+        <a class="col btn btn-primary" href="">CONTATO</a>
 
     </div>
             
