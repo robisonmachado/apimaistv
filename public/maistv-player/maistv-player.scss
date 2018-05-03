@@ -1,0 +1,45 @@
+.video-container{
+    background-color: white;
+    _width: 100vw;
+    _height: 100vh;
+}
+
+.player-video {
+    width: 100vw;
+    height: 100vmin;
+    z-index: 1;
+}
+
+.container-botao-play{
+    width: 100vw;
+    height: 100vmin;
+    position: absolute;
+    z-index: 10;
+}
+
+.subcontainer-botao-play{
+    height: 100%;
+}
+
+#botao-play{
+       
+}
+
+.player-controller{
+    
+}
+
+
+
+// Remove botão de download de vídeos
+video::-internal-media-controls-download-button {
+    display:none;
+    visibility:hidden;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+    display:none;
+    visibility:hidden;
+}
+

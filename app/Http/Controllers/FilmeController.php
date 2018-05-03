@@ -153,7 +153,7 @@ class FilmeController extends Controller
     }
 
     public function play(Filme $filme){
-        return view('filmes.play_filme',[
+        return view('filmes.play_filme2',[
             "filme" => $filme
         ]);
     }
