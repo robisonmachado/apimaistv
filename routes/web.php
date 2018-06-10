@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('index');
-});
+}); */
+
+Route::get('/', 'HomeController@index');
 
 Route::get('filmes/listaPublicaM3U', 'FilmeController@gerarListaM3U'); 
 
@@ -30,7 +32,6 @@ Route::group(['middleware' => ['auth', 'auth.unique.user']],function () {
         }
                 
     });
-
     
     Route::get('/home', 'HomeController@index')->name('home');
 

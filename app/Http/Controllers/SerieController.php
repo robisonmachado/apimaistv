@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Serie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SerieController extends Controller
 {
@@ -14,13 +15,21 @@ class SerieController extends Controller
      */
     public function index()
     {
-        //dd('Série index');
-        
-        $series = Serie::orderBy('nome')->get();
+        if(Auth::user()->isCliente()){
+            $series = Serie::orderBy('nome')->get();
 
-        return view('series.serie_index', [
-            'series' => $series
-            ]);
+            return view('cliente.serie_listar', [
+                'series' => $series
+                ]);
+        }elseif(Auth::user()->isAdmin()){
+            $series = Serie::orderBy('nome')->get();
+
+            return view('series.serie_index', [
+                'series' => $series
+                ]);
+        }
+        
+        
 
     }
 

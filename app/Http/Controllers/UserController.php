@@ -17,7 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->isCliente()){
+        $usuario = Auth::user();
+        if ($usuario->isAdmin()) {
+            return view('admin.admin_home');
+        }
+        elseif($usuario->isCliente()){
             //$ramdomFilmes = Filme::orderByRaw('RAND()')->distinct('id')->take(5)->get();
             $ramdomFilmes = Filme::getRamdomFilmes(14);
             //dd($ramdomFilmes);

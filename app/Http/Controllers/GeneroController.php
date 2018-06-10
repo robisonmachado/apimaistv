@@ -24,7 +24,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        return view('genero_create');
+        return view('filmes.genero_create');
     }
 
     /**
@@ -66,7 +66,7 @@ class GeneroController extends Controller
 
         //dd($filmes);
 
-        return view('genero_edit', [
+        return view('filmes.genero_edit', [
             'genero' => $genero,
             'filmes' => $filmes
             ]);

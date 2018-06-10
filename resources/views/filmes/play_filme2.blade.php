@@ -21,14 +21,13 @@
     <script type="text/javascript" src="{{ asset('maistv-player/maistv-player.js') }}"></script>
 	<!-- MAISTV-PLAYER CSS -->
     <link href="{{ asset('maistv-player/maistv-player.css') }}" rel="stylesheet">
-   
-    
+
 </head>
 
 <body>
 
 <div class="video-container d-flex flex-column align-items-center">
-	
+
 	<video id="maistv-player" class="player-video" oncontextmenu="return false;">
 		<source src="{{ $filme->url_arquivo }}" type="video/mp4" />
 	</video>
@@ -40,19 +39,10 @@
 	</div>
 
 	<div class="player-controller">
-		
-		
-		
+				
 	</div>
 
-	
-	
-
 </div>
-
-
-
-
 
 </body>
 

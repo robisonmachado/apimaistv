@@ -136,12 +136,6 @@ section h2.lancamentos {
   border: thin solid black;
   width: 15vw;
   font-weight: bold; }
-  .item_genero:focus {
-    background-color: #000055 !important;
-    border-color: white; }
-  .item_genero:hover {
-    background-color: #000055 !important;
-    border-color: white; }
   @media (max-width: 991.98px) {
     .item_genero {
       width: 90vw; } }
@@ -151,6 +145,14 @@ section h2.lancamentos {
   @media (max-width: 575.98px) {
     .item_genero {
       width: 90vw; } }
+
+.lista_generos a:focus .item_genero {
+  background-color: #000055 !important;
+  border-color: white; }
+
+.lista_generos a:hover .item_genero {
+  background-color: #000055 !important;
+  border-color: white; }
 
 .container * {
   background-color: #000;

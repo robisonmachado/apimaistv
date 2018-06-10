@@ -14,10 +14,12 @@
 
                 <div class="links row justify-content-around align-items-center">
                     @auth
+                    <a href="{{ url('/tv') }}">TV</a>
                     <a href="{{ url('/filmes') }}">Filmes</a>
                     <a href="{{ url('/series') }}">Séries</a>
-                    <a href="{{ url('/shows') }}">Shows</a>
-                    <a href="{{ url('/musicas') }}">Músicas</a>
+                    <a href="{{ url('/musicas') }}">Shows & Músicas</a>
+                    <a href="{{ url('/animes') }}">Animes</a>
+                    
                     @endauth
                 </div>
 

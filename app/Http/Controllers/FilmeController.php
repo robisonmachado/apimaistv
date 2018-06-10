@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Filme;
 use App\Genero;
 use App\Nacionalidade;
+use App\Serie;
 use Illuminate\Http\Request;
 
 class FilmeController extends Controller
@@ -126,13 +127,7 @@ class FilmeController extends Controller
 
 
     public function gerarListaM3U(){
-       
-//#EXTINF:-1 tvg-id="" tvg-name="300 - A Ascensão do Império" tvg-logo="http://painel.iptvmove.com:25461/images/1253863.jpg" group-title="FILME: ACAO/AVENTURA",300 - A Ascensão do Império
-//http://painel.iptvmove.com:25461/movie/jorgepmi001/jorgepmi001/5252.mp4
-
-
-//http://painel.iptvmove.com:25461/movie/jorgepmi001/jorgepmi001/5372.mkv
-
+    
         return response()->streamDownload( function () {
 
             $GENERO_ID = 13;
@@ -141,14 +136,15 @@ class FilmeController extends Controller
 
             $generosComFilmes = Genero::has('filmes')->orderBy('nome')->get();
 
+            $series = Serie::has('episodios')->orderBy('nome')->get();
             echo view('lista_filmes',[
                 'data' => $data,
                 'filmesSemAdultos' => $filmesSemAdultos,
-                'generosComFilmes' => $generosComFilmes
+                'generosComFilmes' => $generosComFilmes,
+                'series' => $series
             ])->render();
             
             
-
         }, 'iptvmais.m3u8');
     }
 

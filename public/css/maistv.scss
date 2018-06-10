@@ -189,17 +189,6 @@ footer{
     border: thin solid black;
     width: 15vw;
     font-weight: bold;
-    
-    &:focus{
-        background-color: #000055 !important;
-        border-color: white;
-        
-    }
-
-    &:hover{
-        background-color: #000055 !important;
-        border-color: white;  
-    }
 
     @include media-breakpoint-down(md) {
         width: 90vw;
@@ -212,6 +201,25 @@ footer{
        @include media-breakpoint-down(xs) { 
             width: 90vw;
        }
+    
+}
+
+.lista_generos a{
+    
+    &:focus{        
+        .item_genero {
+            background-color: #000055 !important;
+            border-color: white;
+        }        
+    }
+
+    &:hover{
+        .item_genero {
+            background-color: #000055 !important;
+            border-color: white;
+        }
+    }
+
     
 }
 

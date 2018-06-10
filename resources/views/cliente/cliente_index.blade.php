@@ -9,16 +9,17 @@
     
 
     <div class="cliente row justify-content-center align-items-center">
-    
+        <a class="col btn btn-primary" href="tv">TV</a>
+
         <a class="col btn btn-primary" href="usuarios/{{ Auth::user()->id }}/escolherGeneroFilme">FILMES</a>
 
-        <a class="col btn btn-primary" href="">SÉRIES</a>
+        <a class="col btn btn-primary" href="series">SÉRIES</a>
 
-        <a class="col btn btn-primary" href="">SHOWS</a>
+        <a class="col btn btn-primary" href="musicas">SHOWS & MÚSICAS</a>
 
-        <a class="col btn btn-primary" href="">ANIMES</a>
+        <a class="col btn btn-primary" href="animes">ANIMES</a>
 
-        <a class="col btn btn-primary" href="">CONTATO</a>
+        <a class="col btn btn-primary" href="contato">CONTATO</a>
 
     </div>
             

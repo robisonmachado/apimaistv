@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -25,11 +25,16 @@ class HomeController extends Controller
     public function index()
     {
         $usuario = Auth::user();
-        if ($usuario->isAdmin()) {
-            return view('admin.admin_home');
-        }elseif($usuario->isCliente()) {
+        
+        if(!empty($usuario )){
             return redirect('usuarios');
+        }else{
+            //NÃO AUTENTICADO
+            return view('visitante');
+        
         }
+        
+
         
     }
 }
